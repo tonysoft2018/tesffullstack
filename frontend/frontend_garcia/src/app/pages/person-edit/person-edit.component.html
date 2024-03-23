@@ -1,0 +1,35 @@
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+
+  <h1>Editar persona</h1>
+
+  <mat-form-field>
+    <mat-label>Nombre</mat-label>
+    <input matInput formControlName="nombre" required maxlength="200">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Apellido</mat-label>
+    <input matInput formControlName="apellido" required maxlength="200">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Fecha de Nacimiento</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="fechaNacimiento" required>
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Puesto</mat-label>
+    <input matInput formControlName="puesto" required maxlength="200">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Sueldo</mat-label>
+    <input matInput type="number" formControlName="sueldo" required appDecimalNumberDirective [appDecimalNumber]="2">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="!formulario.valid">Guardar</button>
+  <a mat-raised-button routerLink="../">Cancelar</a>
+</form>

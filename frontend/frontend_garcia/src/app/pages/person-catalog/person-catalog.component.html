@@ -35,10 +35,19 @@
     <td mat-cell *matCellDef="let element"> {{element.sueldo | currency:'MXN':'symbol':'1.2-2'}} </td>
   </ng-container>
 
+  <ng-container matColumnDef="editar">
+    <th mat-header-cell *matHeaderCellDef> </th>
+    <td mat-cell *matCellDef="let element"> 
+      <button mat-icon-button color="primary" [routerLink]="[element.id]" [disabled]="isBusy">
+        <mat-icon>edit</mat-icon>
+      </button>
+     </td>
+  </ng-container>
+
   <ng-container matColumnDef="eliminar">
     <th mat-header-cell *matHeaderCellDef> </th>
     <td mat-cell *matCellDef="let element"> 
-      <button mat-icon-button color="accent" (click)="remove(element)" [disabled]="isBusy">
+      <button mat-icon-button color="primary" (click)="remove(element)" [disabled]="isBusy">
         <mat-icon>delete</mat-icon>
       </button>
      </td>

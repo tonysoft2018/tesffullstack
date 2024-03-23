@@ -13,7 +13,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class PersonCatalogComponent implements OnInit, OnDestroy {
 
-  public displayedColumns: string[] = ['id', 'nombre', 'apellido', 'fechaNacimiento', "puesto", "sueldo", "eliminar"];
+  public displayedColumns: string[] = ['id', 'nombre', 'apellido', 'fechaNacimiento', "puesto", "sueldo", "editar", "eliminar"];
   public dataSource:Person[] = [];
   private subscription:Subscription = Subscription.EMPTY;
   public isBusy: boolean = false;

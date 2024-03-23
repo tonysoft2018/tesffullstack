@@ -20,9 +20,17 @@ public createPerson(request: Person){
   return this.httpClient.post<Response<Person>>("http://localhost:8080/api/persons",request);
 }
 
-
 public deletePerson(request: Person){
   return this.httpClient.delete<Response<Person>>(`http://localhost:8080/api/persons/${request.id}`);
+}
+
+public getPersonById(id: string){
+  return this.httpClient.get<Response<Person>>(`http://localhost:8080/api/persons/${id}`);
+}
+
+public updatePerson(id: string, request: Person){
+  console.log(id, request)
+  return this.httpClient.put<Response<Person>>(`http://localhost:8080/api/persons/${id}`, request);
 }
 
 }
