@@ -16,5 +16,9 @@ public getAllPersons(){
   return this.httpClient.get<Response<Person>>("http://localhost:8080/api/persons");
 }
 
+public createPerson(request: Person){
+  return this.httpClient.post<Response<Person>>("http://localhost:8080/api/persons",request);
+}
+
 }
 
