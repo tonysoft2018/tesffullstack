@@ -1,0 +1,38 @@
+<h1>Personas</h1>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Id. </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="nombre">
+    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+    <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="apellido">
+    <th mat-header-cell *matHeaderCellDef> Apellido </th>
+    <td mat-cell *matCellDef="let element"> {{element.apellido}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="fechaNacimiento">
+    <th mat-header-cell *matHeaderCellDef> Fecha de nacimiento </th>
+    <td mat-cell *matCellDef="let element"> {{element.fechaNacimiento | date:'dd/MM/yyyy'}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="puesto">
+    <th mat-header-cell *matHeaderCellDef> Puesto </th>
+    <td mat-cell *matCellDef="let element"> {{element.puesto}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="sueldo">
+    <th mat-header-cell *matHeaderCellDef> Sueldo </th>
+    <td mat-cell *matCellDef="let element"> {{element.sueldo | currency:'MXN':'symbol':'1.2-2'}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
