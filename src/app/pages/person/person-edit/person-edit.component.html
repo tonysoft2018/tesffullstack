@@ -1,0 +1,75 @@
+<form (ngSubmit)="operar()" [formGroup]="form" autocomplete="off">
+    <div class="row" mat-dialog-title>
+
+    @if(form.get('id')?.value){
+        <h2 class="headline m-0">{{ getName() }}</h2>
+    }
+      
+    @if(!form.get('id')?.value){
+        <h2 class="headline m-0">Nueva Persona</h2>
+    }
+      
+    </div>
+  
+    <mat-divider class="-mx-6 text-border"></mat-divider>
+  
+    <mat-dialog-content>
+
+      <div class="row">
+        <mat-form-field class="">
+          <mat-label>Nombre</mat-label>
+          <input formControlName="nombre" matInput>
+            @if("form.controls.nombre.errors?.required"){
+                <mat-error>Este campo es requerido</mat-error>
+            }
+        </mat-form-field>
+      </div>
+  
+      <div class="row">
+        <mat-form-field class="">
+          <mat-label>Apellidos</mat-label>
+          <input formControlName="apellido" matInput>
+            @if("form.controls.apellido.errors?.required"){
+                <mat-error>Este campo es requerido</mat-error>
+            }
+        </mat-form-field>
+      </div>
+
+      <div class="row">
+        <mat-form-field class="">
+          <mat-label>Fecha Nacimiento</mat-label>
+          <input formControlName="fechaNacimiento" placeholder="aaaa-mm-dd" matInput>
+            @if("form.controls.fechaNacimiento.errors?.required"){
+                <mat-error>Este campo es requerido</mat-error>
+            }
+        </mat-form-field>
+      </div>
+
+      <div class="row">
+        <mat-form-field class="">
+          <mat-label>Puesto</mat-label>
+          <input formControlName="puesto" matInput>
+        </mat-form-field>
+      </div>
+
+      <div class="row">
+        <mat-form-field class="">
+          <mat-label>Sueldo</mat-label>
+          <input formControlName="sueldo" matInput>
+        </mat-form-field>
+      </div>
+  
+    </mat-dialog-content>
+  
+    <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close type="button" (click)="cerrar('')">CANCELAR</button>
+      @if(isCreateMode()){
+        <button color="primary" mat-button type="submit">GUARDAR</button>
+      }
+      
+      @if(isUpdateMode()){
+        <button color="primary" mat-button type="submit">ACTUALIZAR</button>
+      }
+      
+    </mat-dialog-actions>
+  </form>
