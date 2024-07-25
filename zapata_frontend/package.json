@@ -1,0 +1,33 @@
+{
+  "name": "zapata_frontend",
+  "version": "1.0.0",
+  "description": "frontend_examen_person",
+  "main": "src/main.tsx",
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.25.1",
+    "react-scripts": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
+    "loader-utils": "3.3.1",
+    "typescript": "5.5.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "author": "Wilmar De MelquisedecLisbet",
+  "license": "ISC",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
