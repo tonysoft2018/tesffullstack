@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "../components/Button";
+import { Link } from "react-router";
 
 const CREATE_PERSON_URL = "https://api.example.com/person"; // Reemplaza con la URL real
 
@@ -111,6 +112,9 @@ function CreatePerson() {
         />
 
         <Button type="submit">Guardar</Button>
+        <Link to="/">
+          <Button type="button" $bgColor="#8b8b8b">Cancelar</Button>
+        </Link>
       </form>
     </>
   );

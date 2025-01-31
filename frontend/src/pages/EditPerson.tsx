@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Button } from '../components/Button'
+import { Link } from 'react-router';
 
 const UPDATE_PERSON_URL = "http://localhost:8080/api/persons/";
 
@@ -110,6 +111,9 @@ function EditPerson() {
         />
 
         <Button type="submit">Guardar</Button>
+        <Link to="/">
+          <Button type="button" $bgColor="#8b8b8b">Cancelar</Button>
+        </Link>
       </form>
     </>
   )
