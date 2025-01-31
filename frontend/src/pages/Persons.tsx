@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react'
 import { Button } from '../components/Button'
 import Table from '../components/Table'
 import { Link } from 'react-router';
+import { Person } from '../interfaces/Person';
 
 const PERSONS_URL = 'http://localhost:8080/api/persons'
 
 function Persons() {
-  const [persons, setPersons] = useState<Record<string, any>[]>([]);
+  const [persons, setPersons] = useState<Person[]>([]);
 
   useEffect(() => {
     fetch(PERSONS_URL)

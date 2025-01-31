@@ -1,17 +1,29 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '../components/Button'
-import { Link } from 'react-router';
+import { Link, useParams } from 'react-router';
+import { Person } from '../interfaces/Person';
 
-const UPDATE_PERSON_URL = "http://localhost:8080/api/persons/";
+const PERSONS_URL = "http://localhost:8080/api/persons";
 
 function EditPerson() {
+  const { id } = useParams();
+
+  const [person, setPerson] = useState<Person>();
+
   const [formData, setFormData] = useState({
-    name: "",
-    lastname: "",
-    position: "",
-    birth_date: "",
-    salary: "",
+    name: person?.name,
+    lastname: person?.lastname,
+    position: person?.position,
+    birth_date: person?.birth_date,
+    salary: person?.salary,
   });
+
+  useEffect(() => {
+    fetch(`${PERSONS_URL}/${id}`)
+      .then(response => response.json())
+      .then(data => setPerson(data))
+      .catch(error => console.error("Error:", error));
+  }, [id]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -21,7 +33,7 @@ function EditPerson() {
     e.preventDefault();
 
     try {
-      const response = await fetch(UPDATE_PERSON_URL, {
+      const response = await fetch(`${PERSONS_URL}/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
