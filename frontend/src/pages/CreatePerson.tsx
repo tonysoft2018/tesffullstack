@@ -9,7 +9,7 @@ function CreatePerson() {
     name: "",
     lastname: "",
     position: "",
-    birth_date: "",
+    birdDate: "",
     salary: "",
   });
 
@@ -88,14 +88,14 @@ function CreatePerson() {
             />
           </div>
           <div>
-            <label style={{ display: "block" }} htmlFor="birth_date">
+            <label style={{ display: "block" }} htmlFor="birdDate">
               Fecha de nacimiento
             </label>
             <input
               style={{ width: "100%" }}
               type="date"
-              name="birth_date"
-              value={formData.birth_date}
+              name="birdDate"
+              value={formData.birdDate}
               onChange={handleChange}
               required
             />

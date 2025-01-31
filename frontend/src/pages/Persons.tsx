@@ -42,7 +42,7 @@ function Persons() {
               <td>{person.id}</td>
               <td>{person.name}</td>
               <td>{person.lastname}</td>
-              <td>{person.birth_date}</td>
+              <td>{person.birdDate}</td>
               <td>{person.position}</td>
               <td>{person.salary}</td>
               <td>

@@ -14,7 +14,7 @@ function EditPerson() {
     name: person?.name,
     lastname: person?.lastname,
     position: person?.position,
-    birth_date: person?.birth_date,
+    birdDate: person?.birdDate,
     salary: person?.salary,
   });
 
@@ -99,14 +99,14 @@ function EditPerson() {
             />
           </div>
           <div>
-            <label style={{ display: "block" }} htmlFor="birth_date">
+            <label style={{ display: "block" }} htmlFor="birdDate">
               Fecha de nacimiento
             </label>
             <input
               style={{ width: "100%" }}
               type="date"
-              name="birth_date"
-              value={formData.birth_date}
+              name="birdDate"
+              value={formData.birdDate}
               onChange={handleChange}
               required
             />

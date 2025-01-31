@@ -3,6 +3,6 @@ export interface Person {
     name: string
     lastname: string
     position: string
-    birth_date: string
+    birdDate: string
     salary: string
 }
