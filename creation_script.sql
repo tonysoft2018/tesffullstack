@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS bd_adame;
+
+USE bd_adame;
+
+CREATE TABLE IF NOT EXISTS person (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    lastname VARCHAR(255) NOT NULL,
+    bird_date DATE NOT NULL,
+    position VARCHAR(255) NOT NULL,
+    salary DECIMAL(10, 2) NOT NULL DEFAULT 0.00
+);
