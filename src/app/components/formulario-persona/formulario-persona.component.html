@@ -1,0 +1,26 @@
+<div class="container mt-4">
+  <h2>{{ persona.id ? 'Editar Usuario' : 'Agregar Usuario' }}</h2>
+  <form class="form-control" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input class="form-control" type="text" class="form-control" id="nombre" [(ngModel)]="persona.nombre" name="nombre" required />
+    </div>
+    <div class="mb-3">
+      <label for="apellido" class="form-label">Apellido</label>
+      <input class="form-control" type="text" class="form-control" id="apellido" [(ngModel)]="persona.apellido" name="apellido" required />
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Fecha de nacimiento</label>
+      <input class="form-control" placeholder="1990-01-01" type="text" class="form-control" id="email" [(ngModel)]="persona.fechaNacimiento" name="fechaNacimiento" required />
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label"> puesto</label>
+      <input class="form-control" type="text" class="form-control" id="puesto" [(ngModel)]="persona.puesto" name="puesto" required />
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">sueldo</label>
+      <input class="form-control" type="text" class="form-control" id="sueldo" [(ngModel)]="persona.sueldo" name="sueldo" required />
+    </div>
+    <button type="submit" class="btn btn-primary">{{ persona.id ? 'Actualizar' : 'Agregar' }}</button>
+  </form>
+</div>
