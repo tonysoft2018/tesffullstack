@@ -19,7 +19,7 @@ public class PersonController {
 
     @Autowired
     private PersonService personService;
-
+    @CrossOrigin(origins = "*")
     @PostMapping
     public ResponseEntity<ApiResponse<PersonDTO>> createPerson(@RequestBody PersonDTO personDTO) {
         try {
@@ -34,7 +34,7 @@ public class PersonController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
         }
     }
-
+    @CrossOrigin(origins = "*")
     @GetMapping("/{id}")
     public ResponseEntity<ApiResponse<PersonDTO>> getPersonById(@PathVariable Integer id) {
         try {
@@ -46,7 +46,7 @@ public class PersonController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
         }
     }
-
+    @CrossOrigin(origins = "*")
     @GetMapping
     public ResponseEntity<ApiResponse<List<PersonDTO>>> getAllPersons() {
         try {
@@ -58,13 +58,13 @@ public class PersonController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
         }
     }
-
+    @CrossOrigin(origins = "*")
     @PutMapping("/{id}")
     public ResponseEntity<PersonDTO> updatePerson(@PathVariable Integer id, @RequestBody PersonDTO personDTO) {
         PersonDTO updatedPerson = personService.updatePerson(id, personDTO);
         return ResponseEntity.ok(updatedPerson);
     }
-
+    @CrossOrigin(origins = "*")
     @DeleteMapping("/{id}")
     public ResponseEntity<ApiResponse<?>> deletePerson(@PathVariable Integer id) {
         try {
