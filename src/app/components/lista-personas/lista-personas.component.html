@@ -1,0 +1,33 @@
+<div class="container mt-4">
+  <h2>Lista de Usuarios</h2>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Fecha de nacimiento</th>
+      <th>Puesto</th>
+      <th>Sueldo</th>
+      <th>Eliminar</th>
+      <th>Modificar</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let persona of personas">
+      <td>{{ persona.id }}</td>
+      <td>{{ persona.nombre }}</td>
+      <td>{{ persona.apellido }}</td>
+      <td>{{ persona.fechaNacimiento }}</td>
+      <td>{{ persona.puesto }}</td>
+      <td>{{ persona.sueldo }}</td>
+      <td>
+        <button class="btn btn-danger btn-sm" (click)="eliminarPersona(persona.id)">Eliminar</button>
+      </td>
+      <td>
+        <button class="btn btn-dark btn-sm" (click)="modificar(persona.id)">Modificar</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
