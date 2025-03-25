@@ -1,0 +1,29 @@
+.container-input{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.container-input > input{
+    border: 2px solid black;
+    border-radius: 5px;
+    color: rgb(26, 23, 23);
+    padding: 5px 10px;
+}
+
+.container-input > input:focus-visible{
+    border: 2px solid green !important;
+    outline: none;
+}
+
+.error-label{
+    color: red;
+}
+
+.container-input-error > input {
+    border: 2px solid red;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
