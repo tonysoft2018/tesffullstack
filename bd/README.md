@@ -1,44 +1,51 @@
-# Requerimientos
+# meneses_bd
 
-- MySQL instalado en su sistema. Desarrollado con Ver 8.0.31 for Win64 on x86_64 (MySQL Community Server - GPL).
-- Acceso de administrador a MySQL.
+Script de base de datos para el examen Fullstack Móvil.
 
-# Despliegue y Ejecución
+Este módulo contiene la configuración y creación de la base de datos en MySQL, así como la tabla requerida para el manejo de personas.
 
-1. Clonar este repositorio:
-   ```
-   git clone https://github.com/usuario/repositorio.git
-   ```
+---
 
-2. Iniciar sesión en MySQL como usuario root:
-   ```
-   mysql -u root -p
-   ```
+# Descripción
 
-3. Cargar el script de creación de la base de datos:
-   ```
-   source ruta_del_script_creacion_bd.sql
-   ```
-   Ejemplo: `D:\SRC\GitHub\tonysoft2018\tesffullstack\bd\script_creacion_bd.sql`
+Se crea una base de datos llamada: bd_meneses Y una tabla llamada: person
 
-4. Cambiar a la base de datos recién creada:
-   ```
-   USE bd_garcia;
-   ```
 
-5. Ejecutar la consulta para verificar los datos en la tabla person:
-   ```
-   SELECT * FROM person;
-   ```
+Con los siguientes campos:
 
-6. Crear un nuevo usuario para la conexión del backend y otorgarle privilegios:
-   ```
-   CREATE USER 'conexion'@'localhost' IDENTIFIED BY 'Wk2!rT8s@6w';
-   GRANT ALL PRIVILEGES ON bd_garcia.* TO 'conexion'@'localhost';
-   FLUSH PRIVILEGES;
-   ```
+- id (autoincremental)
+- nombre
+- apellido
+- fechaNacimiento
+- puesto
+- sueldo
 
-7. Salir de MySQL:
-   ```
-   exit;
-   ```
+---
+
+# Requisitos
+
+- MySQL 8+
+- MySQL Workbench
+
+---
+
+# Script de Base de Datos
+
+```sql
+-- Crear base de datos
+CREATE DATABASE bd_meneses;
+
+-- Usar base de datos
+USE bd_meneses;
+
+-- Crear tabla person
+CREATE TABLE person (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    apellido VARCHAR(100) NOT NULL,
+    fechaNacimiento DATE NOT NULL,
+    puesto VARCHAR(100) NOT NULL,
+    sueldo DOUBLE NOT NULL
+);
+
+
