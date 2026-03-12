@@ -1,0 +1,29 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center">
+    <h2>Listado de Personas</h2>
+    <button class="btn btn-primary" (click)="goToCreate()">Crear Nuevo</button>
+  </div>
+
+  <table class="table table-striped mt-3">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Puesto</th>
+        <th>Sueldo</th>
+        <th>Acciones</th> </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of people">
+        <td>{{p.nombre}}</td>
+        <td>{{p.apellido}}</td>
+        <td>{{p.puesto}}</td>
+        <td>{{p.sueldo | currency}}</td>
+        <td>
+          <button class="btn btn-sm btn-warning me-2" (click)="goToEdit(p.id)">Editar</button>
+          <button class="btn btn-sm btn-danger" (click)="delete(p.id)">Borrar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
