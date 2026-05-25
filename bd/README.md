@@ -1,13 +1,17 @@
-# Requerimientos
+# Base de datos - joya_bd
 
-- MySQL instalado en su sistema. Desarrollado con Ver 8.0.31 for Win64 on x86_64 (MySQL Community Server - GPL).
-- Acceso de administrador a MySQL.
+## Requerimientos
 
-# Despliegue y Ejecución
+- MySQL 8.x instalado en el sistema.
+- Acceso de administrador a MySQL (usuario `root`).
 
-1. Clonar este repositorio:
+## Despliegue y ejecución
+
+1. Clonar el repositorio y cambiar a la rama `joya_bd`:
    ```
-   git clone https://github.com/usuario/repositorio.git
+   git clone https://github.com/tonysoft2018/tesffullstack.git
+   cd tesffullstack
+   git checkout joya_bd
    ```
 
 2. Iniciar sesión en MySQL como usuario root:
@@ -15,30 +19,34 @@
    mysql -u root -p
    ```
 
-3. Cargar el script de creación de la base de datos:
+3. Ejecutar el script de creación:
    ```
-   source ruta_del_script_creacion_bd.sql
+   source ruta_completa/bd/script_creacion_bd.sql
    ```
-   Ejemplo: `D:\SRC\GitHub\tonysoft2018\tesffullstack\bd\script_creacion_bd.sql`
-
-4. Cambiar a la base de datos recién creada:
+   Ejemplo Windows:
    ```
-   USE bd_garcia;
+   source C:/Users/krism/Documents/pruebaTecnica/tesffullstack/bd/script_creacion_bd.sql
    ```
 
-5. Ejecutar la consulta para verificar los datos en la tabla person:
+4. Verificar la base de datos y los datos de prueba:
    ```
+   USE bd_joya;
    SELECT * FROM person;
    ```
 
-6. Crear un nuevo usuario para la conexión del backend y otorgarle privilegios:
+5. Crear el usuario de conexión para el backend:
    ```
-   CREATE USER 'conexion'@'localhost' IDENTIFIED BY 'Wk2!rT8s@6w';
-   GRANT ALL PRIVILEGES ON bd_garcia.* TO 'conexion'@'localhost';
+   CREATE USER 'conexion'@'localhost' IDENTIFIED BY 'Joy@Bd2026!x7';
+   GRANT ALL PRIVILEGES ON bd_joya.* TO 'conexion'@'localhost';
    FLUSH PRIVILEGES;
-   ```
-
-7. Salir de MySQL:
-   ```
    exit;
    ```
+
+## Estructura
+
+| Elemento | Valor |
+|----------|-------|
+| Base de datos | `bd_joya` |
+| Tabla | `person` |
+| Usuario | `conexion` |
+| Password | `Joy@Bd2026!x7` |
