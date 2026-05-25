@@ -1,9 +1,11 @@
-# tesffullstack - Joya
+# tesffullstack — Cristian Joya
 
-Prueba técnica full stack. Ramas del proyecto:
+Repositorio de la prueba técnica full stack. El trabajo se organiza en tres ramas independientes, una por capa:
 
-| Rama | Contenido |
-|------|-----------|
-| `joya_bd` | Script MySQL (`bd_joya`) |
-| `joya_backend` | API REST Spring Boot |
-| `joya_frontend` | Aplicación Angular `frontend_joya` |
+| Rama | Responsabilidad |
+|------|-----------------|
+| `joya_bd` | Esquema MySQL `bd_joya` y scripts de provisión |
+| `joya_backend` | API REST con Spring Boot |
+| `joya_frontend` | Cliente Angular `frontend_joya` |
+
+La documentación detallada de cada capa se encuentra en el `README.md` de su respectiva carpeta.
