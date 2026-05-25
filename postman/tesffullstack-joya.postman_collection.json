@@ -1,0 +1,53 @@
+{
+  "info": {
+    "name": "tesffullstack - joya",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET todas las personas",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/api/persons"
+      }
+    },
+    {
+      "name": "GET persona por id",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/api/persons/1"
+      }
+    },
+    {
+      "name": "POST crear persona",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Ana\",\n  \"apellido\": \"Ruiz\",\n  \"fechaNacimiento\": \"1992-08-10\",\n  \"puesto\": \"QA\",\n  \"sueldo\": 32000.00\n}"
+        },
+        "url": "http://localhost:8080/api/persons"
+      }
+    },
+    {
+      "name": "PUT actualizar persona",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Cristian\",\n  \"apellido\": \"Joya\",\n  \"fechaNacimiento\": \"1995-06-15\",\n  \"puesto\": \"Full Stack\",\n  \"sueldo\": 48000.00\n}"
+        },
+        "url": "http://localhost:8080/api/persons/1"
+      }
+    },
+    {
+      "name": "DELETE persona",
+      "request": {
+        "method": "DELETE",
+        "url": "http://localhost:8080/api/persons/2"
+      }
+    }
+  ]
+}
