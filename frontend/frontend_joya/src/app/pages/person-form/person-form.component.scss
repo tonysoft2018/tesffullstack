@@ -1,0 +1,41 @@
+.form-card {
+  max-width: 720px;
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+  margin-top: 8px;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.actions button mat-spinner {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.loading-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+@media (max-width: 640px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}

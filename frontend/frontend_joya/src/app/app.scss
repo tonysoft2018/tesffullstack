@@ -1,0 +1,38 @@
+.app-shell {
+  min-height: 100vh;
+  background: linear-gradient(160deg, #eef2ff 0%, #f8fafc 45%, #f1f5f9 100%);
+}
+
+.app-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 4px 20px rgba(30, 41, 59, 0.15);
+}
+
+.app-toolbar mat-icon {
+  margin-right: 10px;
+}
+
+.brand {
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.brand-sub {
+  margin-left: 12px;
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+.app-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 20px 40px;
+}
+
+@media (max-width: 640px) {
+  .brand-sub {
+    display: none;
+  }
+}

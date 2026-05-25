@@ -1,0 +1,4 @@
+backend/
+frontend/frontend_joya/node_modules/
+frontend/frontend_joya/dist/
+frontend/frontend_joya/.angular/

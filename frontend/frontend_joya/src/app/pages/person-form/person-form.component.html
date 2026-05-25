@@ -1,0 +1,72 @@
+<mat-card class="form-card">
+  <mat-card-header>
+    <mat-card-title>{{ isEdit ? 'Editar persona' : 'Nueva persona' }}</mat-card-title>
+    <mat-card-subtitle>{{ isEdit ? 'Modifique los datos y guarde los cambios' : 'Complete el formulario de registro' }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    @if (loading) {
+      <div class="loading-wrap">
+        <mat-spinner diameter="40"></mat-spinner>
+      </div>
+    } @else {
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="person-form">
+        <div class="form-grid">
+          <mat-form-field appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="nombre" />
+            @if (form.controls.nombre.hasError('required') && form.controls.nombre.touched) {
+              <mat-error>El nombre es obligatorio</mat-error>
+            }
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Apellido</mat-label>
+            <input matInput formControlName="apellido" />
+            @if (form.controls.apellido.hasError('required') && form.controls.apellido.touched) {
+              <mat-error>El apellido es obligatorio</mat-error>
+            }
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Fecha de nacimiento</mat-label>
+            <input matInput type="date" formControlName="fechaNacimiento" />
+            @if (form.controls.fechaNacimiento.hasError('required') && form.controls.fechaNacimiento.touched) {
+              <mat-error>La fecha es obligatoria</mat-error>
+            }
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Puesto</mat-label>
+            <input matInput formControlName="puesto" />
+            @if (form.controls.puesto.hasError('required') && form.controls.puesto.touched) {
+              <mat-error>El puesto es obligatorio</mat-error>
+            }
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Sueldo</mat-label>
+            <input matInput type="number" min="0" step="0.01" formControlName="sueldo" />
+            @if (form.controls.sueldo.hasError('required') && form.controls.sueldo.touched) {
+              <mat-error>El sueldo es obligatorio</mat-error>
+            }
+          </mat-form-field>
+        </div>
+
+        <div class="actions">
+          <button mat-stroked-button type="button" (click)="onCancel()" [disabled]="saving">
+            Cancelar
+          </button>
+          <button mat-flat-button color="primary" type="submit" [disabled]="saving">
+            @if (saving) {
+              <mat-spinner diameter="20"></mat-spinner>
+            } @else {
+              <mat-icon>save</mat-icon>
+            }
+            Guardar
+          </button>
+        </div>
+      </form>
+    }
+  </mat-card-content>
+</mat-card>
