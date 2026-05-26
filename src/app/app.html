@@ -1,0 +1,31 @@
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-mark">AO</div>
+      <div class="brand-copy">
+        <strong>PersonalHub</strong>
+        <span>Aaron Orozco</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <mat-icon fontSet="material-icons-round">dashboard</mat-icon>
+        Directorio
+      </a>
+      <a routerLink="/nuevo" routerLinkActive="active">
+        <mat-icon fontSet="material-icons-round">person_add_alt</mat-icon>
+        Alta de personal
+      </a>
+    </nav>
+
+    <div class="sidebar-foot">
+      <mat-icon fontSet="material-icons-round">storage</mat-icon>
+      <span>Base: orozco_bd</span>
+    </div>
+  </aside>
+
+  <div class="main-panel">
+    <router-outlet />
+  </div>
+</div>

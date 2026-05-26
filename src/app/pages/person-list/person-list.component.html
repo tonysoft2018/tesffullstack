@@ -1,0 +1,70 @@
+<section class="page">
+  <header class="page-header">
+    <div class="page-heading">
+      <span class="page-kicker">Panel de gestión</span>
+      <h1 class="page-title">Equipo registrado</h1>
+      <p class="page-subtitle">
+        @if (loading) {
+          Cargando colaboradores...
+        } @else {
+          {{ persons.length }} {{ persons.length === 1 ? 'registro activo' : 'registros activos' }} en orozco_bd
+        }
+      </p>
+    </div>
+
+    <button mat-flat-button class="create-btn" routerLink="/nuevo">
+      <mat-icon fontSet="material-icons-round">add_circle</mat-icon>
+      Nuevo colaborador
+    </button>
+  </header>
+
+  @if (loading) {
+    <div class="loading-wrap">
+      <mat-spinner diameter="52"></mat-spinner>
+      <p>Consultando directorio...</p>
+    </div>
+  } @else if (persons.length === 0) {
+    <div class="empty-state">
+      <div class="empty-icon">
+        <mat-icon fontSet="material-icons-round">groups_2</mat-icon>
+      </div>
+      <h2>Sin registros por ahora</h2>
+      <p>Agrega la primera persona para comenzar a administrar el equipo.</p>
+      <button mat-flat-button class="create-btn" routerLink="/nuevo">Registrar colaborador</button>
+    </div>
+  } @else {
+    <div class="person-grid">
+      @for (person of persons; track person.id) {
+        <article class="person-card">
+          <div class="card-top">
+            <div class="avatar">{{ getInitials(person) }}</div>
+            <div class="card-actions">
+              <button mat-icon-button class="action-edit" [routerLink]="['/editar', person.id]" aria-label="Editar">
+                <mat-icon fontSet="material-icons-round">edit_note</mat-icon>
+              </button>
+              <button mat-icon-button class="action-delete" (click)="onDelete(person)" aria-label="Eliminar">
+                <mat-icon fontSet="material-icons-round">delete_outline</mat-icon>
+              </button>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <h2>{{ person.nombre }} {{ person.apellido }}</h2>
+            <span class="role-chip">{{ person.puesto }}</span>
+          </div>
+
+          <div class="card-meta">
+            <div class="meta-item">
+              <mat-icon fontSet="material-icons-round">cake</mat-icon>
+              <span>{{ person.fechaNacimiento | date: 'dd/MM/yyyy' }}</span>
+            </div>
+            <div class="meta-item salary">
+              <mat-icon fontSet="material-icons-round">payments</mat-icon>
+              <span>{{ person.sueldo | currency: 'USD' : 'symbol' : '1.2-2' }}</span>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  }
+</section>

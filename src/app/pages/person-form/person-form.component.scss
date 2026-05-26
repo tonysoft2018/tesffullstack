@@ -1,0 +1,106 @@
+.page {
+  max-width: 760px;
+}
+
+.page-header {
+  margin-bottom: 24px;
+}
+
+.page-kicker {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(124, 58, 237, 0.12);
+  color: #6d28d9;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.page-title {
+  margin: 0;
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+}
+
+.page-subtitle {
+  margin: 8px 0 0;
+  color: var(--text-muted);
+}
+
+.form-shell {
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 16px 40px rgba(28, 25, 23, 0.06);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 18px;
+}
+
+.field ::ng-deep .mat-mdc-text-field-wrapper {
+  border-radius: 14px;
+  background: #fafaf9;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.cancel-btn {
+  border-radius: 999px !important;
+  min-width: 110px;
+}
+
+.save-btn {
+  border-radius: 999px !important;
+  min-width: 180px;
+  background: linear-gradient(135deg, #7c3aed, #6d28d9) !important;
+  color: #fff !important;
+}
+
+.save-btn mat-icon {
+  margin-right: 8px;
+}
+
+.save-btn mat-spinner {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.loading-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 48px;
+}
+
+@media (max-width: 640px) {
+  .form-shell {
+    padding: 20px 16px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column-reverse;
+  }
+
+  .cancel-btn,
+  .save-btn {
+    width: 100%;
+  }
+}
