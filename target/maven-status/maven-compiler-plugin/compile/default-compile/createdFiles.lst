@@ -1,7 +1,0 @@
-com\orozco\testfullstack\service\impl\PersonServiceImpl.class
-com\orozco\testfullstack\TestFullStackApplication.class
-com\orozco\testfullstack\controller\PersonController.class
-com\orozco\testfullstack\repository\PersonRepository.class
-com\orozco\testfullstack\model\ApiResponse.class
-com\orozco\testfullstack\service\PersonService.class
-com\orozco\testfullstack\model\Person.class
