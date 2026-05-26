@@ -1,0 +1,3 @@
+com\orozco\testfullstack\service\impl\PersonServiceImplTest.class
+com\orozco\testfullstack\controller\PersonControllerTest.class
+com\orozco\testfullstack\model\ApiResponseTest.class
