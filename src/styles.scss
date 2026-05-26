@@ -1,0 +1,73 @@
+@use '@angular/material' as mat;
+
+html {
+  @include mat.theme((
+    color: (
+      primary: mat.$violet-palette,
+      tertiary: mat.$spring-green-palette,
+    ),
+    typography: Roboto,
+    density: 0,
+  ));
+}
+
+:root {
+  --sidebar-bg: #111827;
+  --sidebar-accent: #2dd4bf;
+  --page-bg: #f4f1ea;
+  --surface: #ffffff;
+  --text-main: #1c1917;
+  --text-muted: #78716c;
+  --border-soft: #e7e5e4;
+  --accent-warm: #f97316;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color-scheme: light;
+  background-color: var(--page-bg);
+  color: var(--text-main);
+  font-family: 'DM Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+.page-title {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.material-icons-round {
+  font-family: 'Material Icons Round';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+}
+
+.snack-success {
+  --mat-snack-bar-button-color: #ecfdf5;
+  --mat-snack-bar-container-color: #047857;
+}
+
+.snack-warn {
+  --mat-snack-bar-button-color: #fffbeb;
+  --mat-snack-bar-container-color: #b45309;
+}
+
+.snack-error {
+  --mat-snack-bar-button-color: #fef2f2;
+  --mat-snack-bar-container-color: #b91c1c;
+}
