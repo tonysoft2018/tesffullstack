@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-BackendTestArguetaApplication<backend-test-argueta>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.github.wilberargueta.backend.backend_test_argueta.BackendTestArguetaApplication",
+            "projectName": "backend-test-argueta",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
