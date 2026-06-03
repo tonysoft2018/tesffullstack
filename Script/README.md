@@ -23,19 +23,19 @@
    ```bash
    source 1_CREATE_DATABASE.sql
    ```
-   Ubicación: `D:\SRC\GitHub\tonysoft2018\tesffullstack\DDL\1_CREATE_DATABASE.sql`
+   Ubicación: `D:\SRC\GitHub\tonysoft2018\tesffullstack\Script\DDL\1_CREATE_DATABASE.sql`
 
 5. Cargar el script de creación de usuario completo de la base de datos:
    ```bash
    source 2_USER_CONNECTION.sql
    ```
-   Ubicación: `D:\SRC\GitHub\tonysoft2018\tesffullstack\DDL\2_USER_CONNECTION.sql`
+   Ubicación: `D:\SRC\GitHub\tonysoft2018\tesffullstack\Script\DDL\2_USER_CONNECTION.sql`
 
 6. Cargar el script de creación de la tabla en la base de datos:
    ```bash
    source 3_CREATE_TABLE_PERSON.sql
    ```
-   Ubicación: `D:\SRC\GitHub\tonysoft2018\tesffullstack\DDL\3_CREATE_TABLE_PERSON.sql`
+   Ubicación: `D:\SRC\GitHub\tonysoft2018\tesffullstack\Script\DDL\3_CREATE_TABLE_PERSON.sql`
 
 4. Cambiar a la base de datos recién creada:
    ```bash
