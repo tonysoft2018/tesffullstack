@@ -1,0 +1,48 @@
+<h2>Persona</h2>
+
+<form [formGroup]="form">
+
+  <div>
+    <label>Nombre</label>
+    <input formControlName="nombre">
+  </div>
+
+  <div>
+    <label>Apellido</label>
+    <input formControlName="apellido">
+  </div>
+
+  <div>
+    <label>Fecha Nacimiento</label>
+    <input
+      type="date"
+      formControlName="fechaNacimiento">
+  </div>
+
+  <div>
+    <label>Puesto</label>
+    <input formControlName="puesto">
+  </div>
+
+  <div>
+    <label>Sueldo</label>
+    <input
+      type="number"
+      formControlName="sueldo">
+  </div>
+
+  <br>
+
+  <button
+    type="button"
+    (click)="save()">
+    Guardar
+  </button>
+
+  <button
+    type="button"
+    (click)="cancel()">
+    Cancelar
+  </button>
+
+</form>

@@ -1,0 +1,46 @@
+<h2>Listado de Personas</h2>
+
+<button (click)="create()">
+  Crear Persona
+</button>
+
+<table border="1">
+
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Puesto</th>
+      <th>Sueldo</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <tr *ngFor="let person of persons">
+
+      <td>{{person.id}}</td>
+      <td>{{person.nombre}}</td>
+      <td>{{person.apellido}}</td>
+      <td>{{person.puesto}}</td>
+      <td>{{person.sueldo}}</td>
+
+      <td>
+
+        <button (click)="edit(person.id)">
+          Editar
+        </button>
+
+        <button (click)="delete(person.id)">
+          Eliminar
+        </button>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+
+</table>
