@@ -1,0 +1,62 @@
+<div class="main-panel">
+
+    <div>
+        <div title>
+            <h2>Crear persona</h2>
+        </div>
+        <div content>
+            <div class="flex-content-column" [formGroup]="updatePersonRequestForm!">
+                <div class="flex-container-row">
+                    <div class="flex-container-column">
+                        <span>Nombres:</span>
+                        <input type="text" formControlName="nombre">
+                        @if( this.updatePersonRequestForm.get('nombre')?.invalid){
+                        <small style="color: #b93232;">* Nombre son requeridos</small>
+                        }
+                    </div>
+                    <div class="flex-container-column">
+                        <span class="space title-input">Apellidos:</span>
+                        <input type="text" formControlName="apellido">
+                        @if( this.updatePersonRequestForm.get('apellido')?.invalid){
+                        <small style="color: #b93232;">* Apellido son requeridos</small>
+                        }
+                    </div>
+                </div>
+                <div class="flex-container-row">
+                    <div class="flex-container-column">
+                        <span>Fecha nacimiento:</span>
+                        <input type="date" formControlName="fechaNacimiento" style="display: inline;">
+                        @if( this.updatePersonRequestForm.get('fechaNacimiento')?.invalid){
+                        <small style="color: #b93232;">* Fecha de nacimiento es requerida</small>
+                        }
+                    </div>
+                </div>
+                <div class="flex-container-row">
+                    <div class="flex-container-column">
+                        <span>Puesto:</span>
+                        <input type="text" formControlName="puesto">
+                        @if( this.updatePersonRequestForm.get('puesto')?.invalid){
+                        <small style="color: #b93232;">* Puesto es requerido</small>
+                        }
+                    </div>
+                    <div class="flex-container-column">
+                        <span>Sueldo:</span>
+                        <input type="number" formControlName="sueldo">
+                        @if( this.updatePersonRequestForm.get('sueldo')?.invalid){
+                        <small style="color: #b93232;">* Sueldo es requerida</small>
+                        }
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div style="margin-top: 5em;">
+        <div class="flex-content-row">
+            <button class="btn" style="background: #2ecc71;color: white;margin-right: 1em;"
+                [disabled]="updatePersonRequestForm!.status !== 'VALID'" (click)="create()">Crear</button>
+            <button class="btn btn-secondary" (click)="getBack()">Cancelar</button>
+        </div>
+    </div>
+</div>

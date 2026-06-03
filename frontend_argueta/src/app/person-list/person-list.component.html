@@ -1,0 +1,43 @@
+<div class="main-panel">
+    <div>
+        <div>
+            <h2>Listado de personas</h2>
+        </div>
+        <div>
+            <div><button class="btn" style="background:#4f8ef7;color: white;" (click)="newPerson()">Nuevo</button></div>
+        </div>
+    </div>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <td>Nombre</td>
+                    <td>Apellido</td>
+                    <td>Fecha Nacimiento</td>
+                    <td>Puesto</td>
+                    <td>Sueldo</td>
+                    <td>Acciones</td>
+                </tr>
+            </thead>
+            <tbody>
+                @for (dataResponse of pageResponse.data; track dataResponse.id) {
+
+                <tr>
+                    <td>{{ dataResponse.nombre }}</td>
+                    <td>{{ dataResponse.apellido }}</td>
+                    <td>{{ dataResponse.fechaNacimiento | date:'dd/MM/yyyy'}}</td>
+                    <td>{{ dataResponse.puesto }}</td>
+                    <td>{{ dataResponse.sueldo }}</td>
+                    <td>
+                        <button class="btn" style="background: #2ecc71;color: white;margin-right: 1em;" (click)="update(dataResponse.id)">Editar</button>
+                        <button class="btn" style="background: #e74c3c;color: white;" (click)="delete(dataResponse.id)">Eliminar</button>
+                    </td>
+                </tr>
+                } @empty {
+                <li>No hay registros a mostrar</li>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
